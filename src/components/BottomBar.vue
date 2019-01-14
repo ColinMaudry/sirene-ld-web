@@ -1,0 +1,24 @@
+<template>
+  <footer class="footer">
+    <span>
+      Développé par
+      <a href="https://github.com/ColinMaudry">Colin Maudry</a> à partir du template
+      <a
+        href="http://bootstraplovers.com/templates/float-admin-v1.1/dark-version/index.html"
+      >Float Dark</a> conçu par
+      <a href="https://twitter.com/rakesh_wd">Rakesh Sharma</a>. Propulsé par
+      <a href="https://www.vuejs.org">Vue JS</a>.
+    </span>
+  </footer>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+.footer {
+  padding-left: 235px;
+  bottom: 0;
+}
+</style>

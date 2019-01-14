@@ -4,7 +4,7 @@ Le project sireneLD vise à construire un graphe requêtable autour des données
 
 Les jeux de données suivants sont amenés à être intégrés au graphe sireneLD :
 
-- [ x ][répertoire sirene](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret)
+- [x] [Répertoire SIRENE](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret)
 - [ ] [Données essentielles des attributions de marchés publics et de concessions (DECP)](https://www.data.gouv.fr/fr/datasets/donnees-essentielles-de-la-commande-publique-transmises-via-le-pes-marche/)
 - [ ] [Répertoire national des associations (RNA)](https://www.data.gouv.fr/fr/datasets/repertoire-national-des-associations/)
 

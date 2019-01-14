@@ -12,4 +12,8 @@
 .bg-primary {
   background-color: #3978bf !important;
 }
+
+body {
+  font-size: 16px;
+}
 </style>

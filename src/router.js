@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import PresentationPage from "@/components/PresentationPage.vue";
+import PresentationPage from "@/views/PresentationPage.vue";
+import DashboardPage from "@/views/DashboardPage.vue";
 
 Vue.use(Router);
 
@@ -10,7 +11,12 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "presentation-page",
+      name: "dashboard",
+      component: DashboardPage
+    },
+    {
+      path: "/presentation",
+      name: "presentation",
       component: PresentationPage
     }
   ]

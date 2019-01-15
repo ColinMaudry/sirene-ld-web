@@ -23,7 +23,7 @@
                     <em class="icon-cloud-upload fa-3x"></em>
                   </div>
                   <div class="col-xs-8 pv-15 text-center">
-                    <h2 class="mv-0">xx</h2>
+                    <h2 class="mv-0">20 045 522</h2>
                     <div class="text-uppercase">unités légales</div>
                   </div>
                 </div>
@@ -38,7 +38,7 @@
                     <em class="icon-bag fa-3x"></em>
                   </div>
                   <div class="col-xs-8 pv-15 text-center">
-                    <h2 class="mv-0">xx</h2>
+                    <h2 class="mv-0">28 001 656</h2>
                     <div class="text-uppercase">établissements</div>
                   </div>
                 </div>
@@ -52,7 +52,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             Graphe sireneLD
-            <small class="text-muted">au 4 janvier</small>
+            <small class="text-muted">au 11 janvier</small>
           </div>
           <div class="panel-body">
             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -62,7 +62,7 @@
                     <em class="icon-cloud-upload fa-3x"></em>
                   </div>
                   <div class="col-xs-8 pv-15 text-center">
-                    <h2 class="mv-0">xx</h2>
+                    <h2 class="mv-0">1 069 725 246</h2>
                     <div class="text-uppercase">triplets</div>
                   </div>
                 </div>
@@ -70,20 +70,6 @@
               <!--end widget-->
             </div>
             <!--end col-->
-            <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="widget bg-teal padding-0">
-                <div class="row row-table">
-                  <div class="col-xs-4 text-center pv-15 bg-light-dark">
-                    <em class="icon-bag fa-3x"></em>
-                  </div>
-                  <div class="col-xs-8 pv-15 text-center">
-                    <h2 class="mv-0">xx</h2>
-                    <div class="text-uppercase">objets</div>
-                  </div>
-                </div>
-              </div>
-              <!--end widget-->
-            </div>
           </div>
         </div>
       </div>

@@ -32,4 +32,8 @@ export default {
 body {
   font-size: 16px;
 }
+
+.panel-heading {
+  text-transform: none;
+}
 </style>

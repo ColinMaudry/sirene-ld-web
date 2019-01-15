@@ -1,6 +1,6 @@
 <template>
-  <section class="main-content">
-    <!--page header start-->
+  <!--page header start-->
+  <div>
     <div class="page-header">
       <div class="row">
         <div class="col-sm-6">
@@ -15,10 +15,10 @@
     <p>Les jeux de données suivants sont amenés à être intégrés au graphe sireneLD :</p>
 
     <ul>
-      <li>[ x ]
+      <li>[x]
         <a
           href="https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret"
-        >répertoire sirene</a>
+        >Répertoire SIRENE</a>
       </li>
 
       <li>[ ]
@@ -46,6 +46,12 @@
       <a href="https://twitter.com/hashtag/sireneLD">#sireneLD</a>.
     </p>
 
+    <h2 id="tlchargementdesdonnes">Téléchargement des données</h2>
+
+    <p>Les données converties en RDF peuvent être téléchargées au format n-triples gzippé dans
+      <a href="https://sireneld.io/data">https://sireneld.io/data</a>.
+    </p>
+
     <h2 id="sparql">SPARQL</h2>
 
     <p>Les données sources étant converties en graphe RDF, le langage de requête utilisé pour requếter ce graphe est SPARQL.</p>
@@ -58,7 +64,15 @@
 
     <h2 id="notesdeversion">Notes de version</h2>
 
-    <h3 id="v001">v0.0.1</h3>
+    <h3 id="v00216janvier2018">v0.0.2 (16 janvier 2018)</h3>
+
+    <ul>
+      <li>ajout de données au dashboard</li>
+
+      <li>boutons de navigation activés</li>
+    </ul>
+
+    <h3 id="v00115janvier2019">v0.0.1 (15 janvier 2019)</h3>
 
     <ul>
       <li>initialisation de
@@ -69,7 +83,7 @@
       </li>
     </ul>
     <!-- Markdown content -->
-  </section>
+  </div>
 </template>
 
 <script>

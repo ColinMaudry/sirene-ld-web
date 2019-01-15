@@ -1,12 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <top-bar/>
+    <left-bar/>
+    <section class="main-content">
+      <router-view/>
+    </section>
+    <bottom-bar/>
   </div>
 </template>
+
+<script>
+import TopBar from "@/components/TopBar.vue";
+import LeftBar from "@/components/LeftBar.vue";
+import BottomBar from "@/components/BottomBar.vue";
+
+export default {
+  name: "home",
+  components: {
+    TopBar,
+    LeftBar,
+    BottomBar
+  }
+};
+</script>
 
 <style>
 .bg-primary {
@@ -15,5 +31,9 @@
 
 body {
   font-size: 16px;
+}
+
+.panel-heading {
+  text-transform: none;
 }
 </style>

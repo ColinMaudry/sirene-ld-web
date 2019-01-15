@@ -20,5 +20,6 @@ export default {};
 .footer {
   padding-left: 235px;
   bottom: 0;
+  font-size: 0.8em;
 }
 </style>

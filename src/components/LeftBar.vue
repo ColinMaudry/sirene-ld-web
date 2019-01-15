@@ -8,9 +8,14 @@
             <span>Navigation</span>
           </li>
           <li class="active">
-            <a href="/">
+            <router-link to="/">
+              <i class="icon-home"></i> Dashboard
+            </router-link>
+          </li>
+          <li class="active">
+            <router-link to="/presentation">
               <i class="icon-home"></i> Présentation
-            </a>
+            </router-link>
           </li>
         </ul>
         <!-- end list -->

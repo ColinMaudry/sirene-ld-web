@@ -1,4 +1,4 @@
-# sireneLD Web
+# sireneLD Web 0.0.2
 
 Le project sireneLD vise à construire un graphe requêtable autour des données ouvertes faisant référence à des unité légales ou des établissements via leur numéro SIREN/SIRET.
 
@@ -14,6 +14,10 @@ Le croisement de ces données permettra de faire surgir de nouvelles information
 
 Vous pouvez suivre l'avancement de ce projet sur Twitter via le hashtag [#sireneLD](https://twitter.com/hashtag/sireneLD).
 
+## Téléchargement des données
+
+Les données converties en RDF peuvent être téléchargées au format n-triples gzippé dans [https://sireneld.io/data](https://sireneld.io/data).
+
 ## SPARQL
 
 Les données sources étant converties en graphe RDF, le langage de requête utilisé pour requếter ce graphe est SPARQL.
@@ -24,6 +28,11 @@ L'ensemble des données se trouvent dans le graphe par défaut (pas de graphe no
 
 ## Notes de version
 
-### v0.0.1
+### v0.0.2 (16 janvier 2018)
+
+- ajout de données au dashboard
+- boutons de navigation activés
+
+### v0.0.1 (15 janvier 2019)
 
 - initialisation de [Vue 2](https://vuejs.org/), personnalisation du template [Float Dark](http://bootstraplovers.com/templates/float-admin-v1.1/dark-version/index.html) et présentation du projet

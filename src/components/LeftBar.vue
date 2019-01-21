@@ -17,6 +17,11 @@
               <i class="icon-home"></i> Présentation
             </router-link>
           </li>
+          <li class="active">
+            <router-link to="/requete">
+              <i class="icon-home"></i> Requêter
+            </router-link>
+          </li>
         </ul>
         <!-- end list -->
       </div>

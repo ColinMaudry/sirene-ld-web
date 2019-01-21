@@ -25,4 +25,12 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script src="<%= BASE_URL %>ldf-client/ldf-client-ui.min.js"></script>
+  <script>
+    jQuery(function($) {
+      $(".ldf-client").queryui({
+        settings: "http://localhost:8081/queries.json"
+      });
+    });
+  </script>
 </html>

@@ -11,6 +11,7 @@
     "test": "mocha --exit"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "c3": "^0.5.4",
     "express": "^4.16.4",
     "mongoose": "^5.4.10",

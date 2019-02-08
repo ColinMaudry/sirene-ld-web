@@ -7,14 +7,19 @@
           <li class="nav-heading">
             <span>Navigation</span>
           </li>
-          <li class="active">
+          <li>
             <router-link to="/">
               <i class="icon-home"></i> Dashboard
             </router-link>
           </li>
-          <li class="active">
+          <li>
             <router-link to="/presentation">
               <i class="icon-home"></i> Présentation
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/decp">
+              <i class="icon-home"></i> Marchés publics
             </router-link>
           </li>
         </ul>

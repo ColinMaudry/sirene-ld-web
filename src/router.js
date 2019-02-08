@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import PresentationPage from "@/views/PresentationPage.vue";
 import DashboardPage from "@/views/DashboardPage.vue";
+import MarchesPublics from "./views/MarchesPublics.vue";
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
       path: "/presentation",
       name: "presentation",
       component: PresentationPage
+    },
+    {
+      path: "/decp",
+      name: "decp",
+      component: MarchesPublics
     }
   ]
 });

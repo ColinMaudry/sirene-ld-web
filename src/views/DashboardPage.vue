@@ -46,9 +46,9 @@
               <!--end widget-->
             </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <!-- <div class="col-lg-12 col-md-12 col-sm-12">
               <categories-unites-legales/>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>

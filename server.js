@@ -3,6 +3,8 @@ var morgan = require("morgan");
 var path = require("path");
 var app = express();
 var mongoose = require("mongoose");
+var models = require("./server/models");
+
 //var bodyParser = require("body-parser");
 
 // Require configuration file defined in app/Config.js

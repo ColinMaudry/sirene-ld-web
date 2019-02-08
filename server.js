@@ -10,9 +10,18 @@ var config = require("./server/config");
 
 // Connect to database
 mongoose.connect(
-  config.DB,
-  { useNewUrlParser: true }
+  config.db.uri,
+  {
+    useNewUrlParser: true,
+    auth: { user: config.db.username, password: config.db.password }
+  }
 );
+mongoose.Promise = global.Promise;
+
+//Get the default connection
+var db = mongoose.connection;
+//Bind connection to error event (to get notification of connection errors)
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 // Use morgan to log request in dev mode
 app.use(morgan("dev"));

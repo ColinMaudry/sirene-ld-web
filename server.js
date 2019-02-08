@@ -28,6 +28,13 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // Use morgan to log request in dev mode
 app.use(morgan("dev"));
 
+app.get("/api/decp/sources", function(req, res) {
+  models.Source.find(function(err, sources) {
+    if (err) return console.error(err);
+    res.json(sources);
+  });
+});
+
 // Sends static files  from the public path directory
 app.use(express.static(path.join(__dirname, "/dist")));
 

@@ -10,10 +10,12 @@ describe("Basic tests", function() {
     request(app)
       .get("/")
       .expect("Content-Type", /html/)
-      .expect(200)
-      .end(function(err, res) {
-        if (err) return done(err);
-        done();
-      });
+      .expect(200, done);
+  });
+  it("DECP sources route (/api/decp/sources) returns JSON.", function(done) {
+    request(app)
+      .get("/api/decp/sources")
+      .expect("Content-Type", /json/)
+      .expect(200, done);
   });
 });

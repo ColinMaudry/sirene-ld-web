@@ -12,12 +12,23 @@
           </p>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6">
+          <decp-sources/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import DecpSources from "@/components/charts/DecpSources.vue";
+
+export default {
+  components: {
+    DecpSources
+  }
+};
 </script>
 
 <style scoped>

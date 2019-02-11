@@ -14,10 +14,15 @@ module.exports = function(req, res, next) {
     }
   });
 
-  req.custom.searchParams = params;
+  res.locals.searchParams = params;
 
-  // Limit param as number
+  // "Limit" param as number
   req.query.limit = parseInt(req.query.limit) || undefined;
+
+  // Adjust the "sort" param value
+  if (req.query.sort && req.query.sort.charAt(0) === "+") {
+    req.query.sort = [req.query.sort.substring(1)];
+  }
 
   next();
 };

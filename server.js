@@ -69,6 +69,7 @@ app.get("/api/decp/marches", async (req, res, next) => {
   try {
     const [results, totalCount] = await Promise.all([
       models.Marche.find(res.locals.searchParams)
+        .sort(req.query.sort)
         .limit(req.query.per_page || req.query.limit)
         .skip(req.skip)
         .lean()

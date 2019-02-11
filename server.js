@@ -5,7 +5,8 @@ var mongoose = require("mongoose");
 var models = require("./server/models");
 var paginate = require("./server/middlewares/custom-paginate");
 var cors = require("cors");
-
+var injectPaginate = require("./server/middlewares/inject-paginate");
+var searchParams = require("./server/middlewares/search-params");
 //var bodyParser = require("body-parser");
 
 // Require configuration file defined in app/Config.js
@@ -82,7 +83,7 @@ app.get("/api/decp/marches", async (req, res, next) => {
     next(err);
   }
 });
-app.use(customPaginate);
+app.use(injectPaginate);
 
 // Sends static files  from the public path directory
 app.use(express.static("dist"));

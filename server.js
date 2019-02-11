@@ -1,6 +1,5 @@
 var express = require("express");
 var morgan = require("morgan");
-var path = require("path");
 var app = express();
 var mongoose = require("mongoose");
 var models = require("./server/models");
@@ -30,53 +29,62 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 app.use(cors());
 
 // Use morgan to log request in dev mode
-app.use(morgan("dev"));
+//app.use(morgan("dev"));
 
 app.use(paginate.middleware(10, 50));
 
+// Extract search params from URL parameters in req.custom.searchParams
+app.use(searchParams);
+
 app.get("/api/decp/sources", async (req, res, next) => {
+  if (!req.custom) {
+    req.custom = {};
+  }
   try {
-    const [results, itemCount] = await Promise.all([
-      models.Source.find({})
-        .limit(req.query.limit)
+    const [results, totalCount] = await Promise.all([
+      models.Source.find(res.locals.searchParams)
+        .limit(req.query.per_page || req.query.limit)
         .skip(req.skip)
         .lean()
         .exec(),
-      models.Source.countDocuments({})
+      models.Source.countDocuments(res.locals.searchParams)
     ]);
 
-    const pageCount = Math.ceil(itemCount / req.query.limit);
-    const pagesBefore = req.query.page - 1;
-    const firstItem = pagesBefore * req.query.limit + 1;
-    const lastItem =
-      req.query.page === pageCount
-        ? itemCount
-        : req.query.page * req.query.limit;
-    const prevPageHref = req.query.page > 1 ? paginate.href(req)(true) : null;
+    res.locals.results = results;
+    res.locals.totalCount = totalCount;
 
-    res.json({
-      links: {
-        pagination: {
-          next_page_url: paginate.href(req)(false),
-          prev_page_url: prevPageHref,
-          current_page: req.query.page,
-          last_page: pageCount,
-          total: itemCount,
-          from: firstItem,
-          to: lastItem,
-          per_page: req.query.limit
-        }
-      },
-      data: results
-    });
+    next();
   } catch (err) {
     next(err);
   }
 });
 
-// Sends static files  from the public path directory
-app.use(express.static(path.join(__dirname, "/dist")));
+app.get("/api/decp/marches", async (req, res, next) => {
+  if (!req.custom) {
+    req.custom = {};
+  }
 
+  try {
+    const [results, totalCount] = await Promise.all([
+      models.Marche.find(res.locals.searchParams)
+        .limit(req.query.per_page || req.query.limit)
+        .skip(req.skip)
+        .lean()
+        .exec(),
+      models.Marche.countDocuments(res.locals.searchParams)
+    ]);
+
+    res.locals.results = results;
+    res.locals.totalCount = totalCount;
+
+    next();
+  } catch (err) {
+    next(err);
+  }
+});
+app.use(customPaginate);
+
+// Sends static files  from the public path directory
 app.use(express.static("dist"));
 
 module.exports = app;

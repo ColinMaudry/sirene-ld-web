@@ -3,7 +3,7 @@ var morgan = require("morgan");
 var app = express();
 var mongoose = require("mongoose");
 var models = require("./server/models");
-var paginate = require("express-paginate");
+var paginate = require("./server/middlewares/custom-paginate");
 var cors = require("cors");
 
 //var bodyParser = require("body-parser");

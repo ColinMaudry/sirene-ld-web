@@ -4,9 +4,7 @@
     <div class="nano">
       <div class="nano-content">
         <ul class="metisMenu nav" id="menu">
-          <li class="nav-heading">
-            <span>Navigation</span>
-          </li>
+          <li class="nav-heading"></li>
           <li>
             <router-link to="/">
               <i class="icon-home"></i> Dashboard
@@ -14,12 +12,12 @@
           </li>
           <li>
             <router-link to="/presentation">
-              <i class="icon-home"></i> Présentation
+              <i class="icon-book-open"></i> Présentation
             </router-link>
           </li>
           <li>
-            <router-link to="/decp">
-              <i class="icon-home"></i> Marchés publics
+            <router-link to="/commande-publique">
+              <i class="icon-docs"></i> Marchés publics
             </router-link>
           </li>
         </ul>

@@ -21,7 +21,7 @@ export default new Router({
       component: PresentationPage
     },
     {
-      path: "/decp",
+      path: "/commande-publique",
       name: "decp",
       component: MarchesPublics
     }

@@ -9,6 +9,7 @@
             <h1>
               <!-- <img src="images/logo-default.png" alt> -->
               sireneLD.io
+              <span style="font-size:0.5em">{{ appVersion }}</span>
             </h1>
           </a>
           <div class="left-nav-toggle visible-xs visible-sm">
@@ -25,11 +26,19 @@
 </template>
 
 <script>
+export default {
+  computed: {
+    appVersion() {
+      return process.env.VUE_APP_VERSION;
+    }
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .admin-logo h1 {
   text-transform: none;
+  width: 250px;
 }
 </style>

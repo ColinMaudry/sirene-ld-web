@@ -5,7 +5,7 @@ var app = require("./../server");
 // Basic testing
 //
 
-describe("Basic tests", function() {
+describe("## Basic tests", function() {
   it("Root path (/) returns HTML Web app.", function(done) {
     request(app)
       .get("/")

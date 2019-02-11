@@ -5,7 +5,7 @@ var app = require("./../server");
 // Pagination testing
 //
 
-describe("Pagination", function() {
+describe("## Pagination", function() {
   it("/api/decp/marches returns many results (no limit)", function(done) {
     request(app)
       .get("/api/decp/marches")

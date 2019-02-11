@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var models = require("./server/models");
 var paginate = require("./server/middlewares/custom-paginate");
 var cors = require("cors");
+var history = require("connect-history-api-fallback");
 var injectPaginate = require("./server/middlewares/inject-paginate");
 var searchParams = require("./server/middlewares/search-params");
 //var bodyParser = require("body-parser");

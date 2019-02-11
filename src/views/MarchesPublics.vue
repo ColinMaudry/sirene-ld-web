@@ -13,6 +13,11 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-md-12">
+          <decp-marches/>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-6">
           <decp-sources/>
         </div>
@@ -23,10 +28,12 @@
 
 <script>
 import DecpSources from "@/components/charts/DecpSources.vue";
+import DecpMarches from "@/components/charts/DecpMarches.vue";
 
 export default {
   components: {
-    DecpSources
+    DecpSources,
+    DecpMarches
   }
 };
 </script>

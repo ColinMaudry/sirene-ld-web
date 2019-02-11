@@ -84,7 +84,11 @@ app.get("/api/decp/marches", async (req, res, next) => {
   }
 });
 app.use(injectPaginate);
-
+app.use(
+  history({
+    verbose: false
+  })
+);
 // Sends static files  from the public path directory
 app.use(express.static("dist"));
 

@@ -4,8 +4,8 @@
     <left-bar/>
     <section class="main-content">
       <router-view/>
+      <bottom-bar/>
     </section>
-    <bottom-bar/>
   </div>
 </template>
 

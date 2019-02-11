@@ -5,12 +5,13 @@
       <vuetable
         :api-url="apiServer + '/api/decp/sources'"
         :fields="fields"
-        ref="vuetable"
+        ref="decpSources"
         @vuetable:pagination-data="onPaginationData"
       ></vuetable>
       <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
     </div>
-    <div class="panel-footer">Voir aussi les sources identifiées mais pas encore intégrées
+    <div class="panel-footer">
+      Voir aussi les sources identifiées mais pas encore intégrées
       <a
         href="https://github.com/ColinMaudry/decp-json#sources-de-donn%C3%A9es"
         target="_blank"

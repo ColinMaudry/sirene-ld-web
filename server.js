@@ -6,9 +6,11 @@ var models = require("./server/models");
 var paginate = require("./server/middlewares/custom-paginate");
 var cors = require("cors");
 var history = require("connect-history-api-fallback");
+//var bodyParser = require("body-parser");
+
+// My middlewares
 var injectPaginate = require("./server/middlewares/inject-paginate");
 var searchParams = require("./server/middlewares/search-params");
-//var bodyParser = require("body-parser");
 
 // Require configuration file defined in app/Config.js
 var config = require("./server/config");
@@ -28,10 +30,10 @@ var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-app.use(cors());
-
 // Use morgan to log request in dev mode
 //app.use(morgan("dev"));
+
+app.use(cors());
 
 app.use(paginate.middleware(10, 50));
 

@@ -27,13 +27,33 @@
 </template>
 
 <script>
+import axios from "axios";
 import DecpSources from "@/components/charts/DecpSources.vue";
 import DecpMarches from "@/components/charts/DecpMarches.vue";
+import { mapActions } from "vuex";
 
 export default {
   components: {
     DecpSources,
     DecpMarches
+  },
+  methods: {
+    ...mapActions(["storeMarches"])
+  },
+  computed: {
+    apiServer() {
+      return process.env.VUE_APP_API_SERVER;
+    }
+  },
+  created() {
+    axios
+      .get(this.apiServer + "/api/decp/marches")
+      .then(response => {
+        this.storeMarches(response.data);
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
   }
 };
 </script>

@@ -47,13 +47,15 @@ export default {
           callback: "getNumMarchesPerSource"
         }
       ],
-      marches: [],
       sourcesApi: this.$store.apiServer + "/api/decp/sources"
     };
   },
   computed: {
     apiServer() {
       return process.env.VUE_APP_API_SERVER;
+    },
+    marches() {
+      return this.$store.state.data.marches;
     }
   },
   methods: {
@@ -73,17 +75,6 @@ export default {
       console.log;
       return filtered.length;
     }
-  },
-  created() {
-    axios
-      .get(this.apiServer + "/api/decp/marches")
-      .then(response => {
-        this.marches = response.data;
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log(error.response);
-      });
   }
 };
 </script>

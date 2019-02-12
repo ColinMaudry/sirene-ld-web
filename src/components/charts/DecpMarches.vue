@@ -2,11 +2,13 @@
   <div class="panel panel-default">
     <div class="panel-heading">Attributions de marché (DECP)</div>
     <div class="panel-body">
+      <vuetable-filter-bar></vuetable-filter-bar>
       <vuetable
         :api-url="apiServer + '/api/decp/marches'"
         :fields="fields"
         :sort-order="sortOrder"
         :multi-sort="false"
+        :append-params="moreParams"
         ref="decpMarches"
         @vuetable:pagination-data="onPaginationData"
       ></vuetable>
@@ -53,6 +55,13 @@ export default {
   computed: {
     apiServer() {
       return process.env.VUE_APP_API_SERVER;
+    },
+    moreParams() {
+      var params = {
+        text: this.$store.getters.getFilterText
+      };
+      console.log(JSON.stringify(params));
+      return params;
     }
   },
   methods: {
@@ -80,6 +89,14 @@ export default {
       return filtered.length;
     }
   },
+  watch: {
+    moreParams(newVal, oldVal) {
+      this.$nextTick(() => {
+        this.$refs.decpMarches.refresh();
+      });
+    }
+  },
+  mounted() {},
   created() {
     axios
       .get(this.apiServer + "/api/decp/marches")

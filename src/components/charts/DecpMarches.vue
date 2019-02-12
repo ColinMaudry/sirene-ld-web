@@ -2,7 +2,14 @@
   <div class="panel panel-default">
     <div class="panel-heading">Attributions de marché (DECP)</div>
     <div class="panel-body">
-      <vuetable-filter-bar></vuetable-filter-bar>
+      <div class="btn-toolbar justify-content-between">
+        <vuetable-filter-bar></vuetable-filter-bar>
+        <vuetable-pagination-info
+          info-template="Résultats {from} à {to} sur {total}"
+          ref="decpPaginationInfo"
+          css="{infoClass:'form-control'}"
+        ></vuetable-pagination-info>
+      </div>
       <vuetable
         :api-url="apiServer + '/api/decp/marches'"
         :fields="fields"
@@ -22,12 +29,14 @@
 import Vuetable from "vuetable-2";
 import axios from "axios";
 import VuetableFilterBar from "../vuetable/VuetableFilterBar";
+import VuetablePaginationInfo from "../vuetable/VuetablePaginationInfo";
 export default {
   components: {
     Vuetable,
     VuetablePagination: require("../vuetable/VuetablePaginationBootstrap.vue")
       .default,
-    VuetableFilterBar
+    VuetableFilterBar,
+    VuetablePaginationInfo
   },
 
   data() {
@@ -70,6 +79,7 @@ export default {
     },
     onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData);
+      this.$refs.decpPaginationInfo.setPaginationData(paginationData);
     },
     onChangePage(page) {
       this.$refs.decpMarches.changePage(page);
@@ -114,5 +124,8 @@ export default {
 td.objet {
   font-size: 0.8em;
   width: 50%;
+}
+.vuetable-pagination-info {
+  float: right;
 }
 </style>

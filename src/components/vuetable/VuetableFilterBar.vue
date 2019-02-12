@@ -1,19 +1,18 @@
 <template>
-  <div class="filter-bar ui basic segment grid">
-    <div class="ui form">
-      <div class="inline field">
-        <label>Recherche :</label>
-        <input
-          type="text"
-          v-model="filterText"
-          class="three wide column"
-          @keyup.enter="doFilter"
-          placeholder="name, nickname, or email"
-        >
-        <button class="ui primary button" @click="doFilter">Go</button>
-        <button class="ui button" @click="resetFilter">Remettre à zéro</button>
-      </div>
+  <div class="btn-toolbar mb-6 fulltext" role="toolbar" aria-label="Recherche de texte">
+    <div class="input-group">
+      <input
+        type="text"
+        v-model="filterText"
+        @keyup.enter="doFilter"
+        placeholder="Recherche dans tous les marchés..."
+        class="form-control"
+        aria-label="Input group example"
+        aria-describedby="btnGroupAddon"
+      >
     </div>
+    <button type="button" class="btn btn-primary" @click="doFilter">Go</button>
+    <button type="button" class="btn btn-primary" @click="resetFilter">Remise à zéro</button>
   </div>
 </template>
 
@@ -37,3 +36,12 @@ export default {
   }
 };
 </script>
+<style>
+div.fulltext {
+  margin-bottom: 20px;
+  float: left;
+}
+.fulltext > .input-group > input {
+  width: 260px;
+}
+</style>

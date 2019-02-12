@@ -28,4 +28,20 @@ describe("## Full text search", function() {
       })
       .expect(200, done);
   });
+  it("/api/decp/marches?text=&limit=50 returns all marchés up to the limit and ignores 'text'.", function(done) {
+    request(app)
+      .get("/api/decp/marches?text=&limit=50")
+      .expect(function(res) {
+        if (res.body.length === 50) {
+          return "The search returned 50 marchés";
+        } else {
+          throw new Error(
+            "Search did not return the right number of marché (" +
+              res.body.length +
+              ")."
+          );
+        }
+      })
+      .expect(200, done);
+  });
 });

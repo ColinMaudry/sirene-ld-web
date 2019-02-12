@@ -14,6 +14,15 @@ module.exports = function(req, res, next) {
     }
   });
 
+  // Replacing the "text" URL param with a Mongo text query (https://docs.mongodb.com/manual/reference/operator/query/text/#op._S_text)
+  if (params.text) {
+    params["$text"] = {
+      $search: params.text,
+      $diacriticSensitive: true
+    };
+    params.text = undefined;
+  }
+
   res.locals.searchParams = params;
 
   // "Limit" param as number

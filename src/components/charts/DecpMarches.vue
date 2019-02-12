@@ -69,7 +69,6 @@ export default {
       var params = {
         text: this.$store.getters.getFilterText
       };
-      console.log(JSON.stringify(params));
       return params;
     }
   },
@@ -95,7 +94,6 @@ export default {
       var filtered = this.marches.filter(function(marche) {
         return marche.source === value;
       });
-      console.log;
       return filtered.length;
     }
   },

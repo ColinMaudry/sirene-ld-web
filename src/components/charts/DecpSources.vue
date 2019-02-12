@@ -2,13 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">Sources de données essentielles utilisées</div>
     <div class="panel-body">
-      <vuetable
-        :api-url="apiServer + '/api/decp/sources'"
-        :fields="fields"
-        ref="decpSources"
-        @vuetable:pagination-data="onPaginationData"
-      ></vuetable>
-      <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
+      <vuetable :api-url="apiServer + '/api/decp/sources'" :fields="fields" ref="decpSources"></vuetable>
     </div>
     <div class="panel-footer">
       Voir aussi les sources identifiées mais pas encore intégrées
@@ -23,13 +17,9 @@
 
 <script>
 import Vuetable from "vuetable-2";
-import axios from "axios";
-//import VuetablePagination from "@/components/VueTablePagination/VuetablePagination";
 export default {
   components: {
-    Vuetable,
-    VuetablePagination: require("../VueTablePagination/VuetablePagination.vue")
-      .default
+    Vuetable
   },
 
   data() {
@@ -61,12 +51,6 @@ export default {
   methods: {
     toHref(url) {
       return '<a target="_blank" href="' + url + "\">Plus d'infos</a>";
-    },
-    onPaginationData(paginationData) {
-      this.$refs.pagination.setPaginationData(paginationData);
-    },
-    onChangePage(page) {
-      this.$refs.vuetable.changePage(page);
     },
     getNumMarchesPerSource(value) {
       var filtered = this.marches.filter(function(marche) {

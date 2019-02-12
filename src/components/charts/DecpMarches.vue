@@ -12,13 +12,6 @@
       ></vuetable>
       <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
     </div>
-    <div class="panel-footer">
-      Voir aussi les sources identifiées mais pas encore intégrées
-      <a
-        href="https://github.com/ColinMaudry/decp-json#sources-de-donn%C3%A9es"
-        target="_blank"
-      >sur Github</a>
-    </div>
   </div>
 </template>
 
@@ -26,23 +19,25 @@
 <script>
 import Vuetable from "vuetable-2";
 import axios from "axios";
+import VuetableFilterBar from "../vuetable/VuetableFilterBar";
 export default {
   components: {
     Vuetable,
-    VuetablePagination: require("../VueTablePagination/VuetablePagination.vue")
-      .default
+    VuetablePagination: require("../vuetable/VuetablePaginationBootstrap.vue")
+      .default,
+    VuetableFilterBar
   },
 
   data() {
     return {
       fields: [
-        "id",
+        { name: "id", title: "id" },
         {
           name: "acheteur.nom",
           title: "Acheteur",
           sortField: "acheteur.nom"
         },
-        "objet",
+        { name: "objet", dataClass: "objet" },
         {
           name: "dateNotification",
           title: "Date de notification",
@@ -90,7 +85,6 @@ export default {
       .get(this.apiServer + "/api/decp/marches")
       .then(response => {
         this.marches = response.data;
-        console.log(response.data);
       })
       .catch(error => {
         console.log(error.response);
@@ -99,5 +93,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+td.objet {
+  font-size: 0.8em;
+  width: 50%;
+}
 </style>

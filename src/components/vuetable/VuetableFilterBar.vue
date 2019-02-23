@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-toolbar mb-6 fulltext" role="toolbar" aria-label="Recherche de texte">
+  <div class="btn-group mr-4 fulltext" role="group" aria-label="Recherche de texte">
     <div class="input-group">
       <input
         type="text"

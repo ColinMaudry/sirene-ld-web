@@ -4,6 +4,7 @@
     <div class="panel-body">
       <div class="btn-toolbar justify-content-between">
         <vuetable-filter-bar></vuetable-filter-bar>
+        <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
         <vuetable-pagination-info
           info-template="Résultats {from} à {to} sur {total}"
           ref="decpPaginationInfo"
@@ -19,7 +20,6 @@
         ref="decpMarches"
         @vuetable:pagination-data="onPaginationData"
       ></vuetable>
-      <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
     </div>
   </div>
 </template>
@@ -51,8 +51,9 @@ export default {
         { name: "objet", dataClass: "objet" },
         {
           name: "dateNotification",
-          title: "Date de notification",
-          sortField: "dateNotification"
+          title: "Notification",
+          sortField: "dateNotification",
+          callback: "formatDate"
         },
         { name: "montant", sortField: "montant" }
       ],
@@ -69,13 +70,14 @@ export default {
       var params = {
         text: this.$store.getters.getFilterText
       };
-      console.log(JSON.stringify(params));
       return params;
     }
   },
   methods: {
-    toHref(url) {
-      return '<a target="_blank" href="' + url + "\">Plus d'infos</a>";
+    formatDate(date) {
+      var options = { year: "numeric", month: "short", day: "numeric" };
+      var jsDate = new Date(date.substring(0, 10));
+      return jsDate.toLocaleDateString("fr-FR", options);
     },
     onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData);
@@ -95,11 +97,11 @@ export default {
       var filtered = this.marches.filter(function(marche) {
         return marche.source === value;
       });
-      console.log;
       return filtered.length;
     }
   },
   watch: {
+    // eslint-disable-next-line
     moreParams(newVal, oldVal) {
       this.$nextTick(() => {
         this.$refs.decpMarches.refresh();

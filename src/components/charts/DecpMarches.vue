@@ -73,8 +73,10 @@ export default {
     }
   },
   methods: {
-    toHref(url) {
-      return '<a target="_blank" href="' + url + "\">Plus d'infos</a>";
+    formatDate(date) {
+      var options = { year: "numeric", month: "short", day: "numeric" };
+      var jsDate = new Date(date.substring(0, 10));
+      return jsDate.toLocaleDateString("fr-FR", options);
     },
     onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData);

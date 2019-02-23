@@ -23,7 +23,9 @@ Les données converties en RDF ou JSON peuvent être téléchargées au format n
 ### v0.3.0 (12 février 2019)
 
 - ajout des données essentielles de la commande publique issues de [decp-json](https://github.com/ColinMaudry/decp-json/)
-- mise à disposition d'une API (par exemple https://sireneld.io/api/decp/marches&limit=2&text=cholet)
+- mise à disposition d'une API (par exemple https://sireneld.io/api/decp/marches?limit=2&text=cholet)
+- déplacement des contrôles de pagination au-dessus du tableau
+- correction du bug de formatage des dates
 
 ### v0.2.0 (16 janvier 2019)
 

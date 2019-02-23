@@ -81,7 +81,7 @@
         >decp-json</a>
       </li>
 
-      <li>mise à disposition d'une API (par exemple https://sireneld.io/api/decp/marches&amp;limit=2&amp;text=cholet)</li>
+      <li>mise à disposition d'une API (par exemple https://sireneld.io/api/decp/marches?limit=2&amp;text=cholet)</li>
     </ul>
     <h3 id="v02016janvier2019">v0.2.0 (16 janvier 2019)</h3>
 

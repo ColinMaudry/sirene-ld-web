@@ -4,8 +4,8 @@
     <left-bar/>
     <section class="main-content">
       <router-view/>
+      <bottom-bar/>
     </section>
-    <bottom-bar/>
   </div>
 </template>
 
@@ -35,5 +35,9 @@ body {
 
 .panel-heading {
   text-transform: none;
+}
+
+.panel-footer {
+  font-size: 0.8em;
 }
 </style>

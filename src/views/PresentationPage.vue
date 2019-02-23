@@ -15,56 +15,80 @@
     <p>Les jeux de données suivants sont amenés à être intégrés au graphe sireneLD :</p>
 
     <ul>
-      <li>[x]
+      <li>
+        [x]
         <a
           href="https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret"
         >Répertoire SIRENE</a>
       </li>
 
-      <li>[ ]
+      <li>
+        [x]
         <a
           href="https://www.data.gouv.fr/fr/datasets/donnees-essentielles-de-la-commande-publique-transmises-via-le-pes-marche/"
-        >Données essentielles des attributions de marchés publics et de concessions (DECP)</a>
+        >Données essentielles des attributions de marchés publics et de concessions (DECP)</a> (en JSON pour l'instant, issues de
+        <a
+          href="https://github.com/ColinMaudry/decp-json/"
+        >decp-json</a>)
       </li>
 
-      <li>[ ]
+      <li>
+        [ ]
         <a
           href="https://www.data.gouv.fr/fr/datasets/repertoire-national-des-associations/"
         >Répertoire national des associations (RNA)</a>
       </li>
     </ul>
 
-    <p>Les scripts de conversion de ces données sont visibles dans le dépôt Github
-      <a href="https://github.com/ColinMaudry/sirene-ld">ColinMaudry/sirene-ld</a>.
+    <p>
+      Les scripts de conversion de ces données sont visibles dans le dépôt Github
+      <a
+        href="https://github.com/ColinMaudry/sirene-ld"
+      >ColinMaudry/sirene-ld</a> et
+      <a href="https://github.com/ColinMaudry/decp-json/">decp-json</a>.
     </p>
 
-    <p>Le croisement de ces données permettra de faire surgir de nouvelles informations (
+    <p>
+      Le croisement de ces données permettra de faire surgir de nouvelles informations (
       <em>insights</em>).
     </p>
 
-    <p>Vous pouvez suivre l'avancement de ce projet sur Twitter via le hashtag
-      <a href="https://twitter.com/hashtag/sireneLD">#sireneLD</a>.
+    <p>
+      Vous pouvez suivre l'avancement de ce projet sur Twitter via le hashtag
+      <a
+        href="https://twitter.com/hashtag/sireneLD"
+      >#sireneLD</a>.
     </p>
 
     <h2 id="tlchargementdesdonnes">Téléchargement des données</h2>
 
-    <p>Les données converties en RDF peuvent être téléchargées au format n-triples gzippé dans
-      <a href="https://sireneld.io/data">https://sireneld.io/data</a>.
+    <p>
+      Les données converties en RDF ou JSON peuvent être téléchargées au format n-triples gzippé dans
+      <a
+        href="https://sireneld.io/data"
+      >https://sireneld.io/data</a>.
     </p>
-
-    <h2 id="sparql">SPARQL</h2>
-
-    <p>Les données sources étant converties en graphe RDF, le langage de requête utilisé pour requếter ce graphe est SPARQL.</p>
-
-    <p>Le endpoint se trouve à cette adresse :
-      <code>https://triplestore.maudry.com/sirene/query</code>
-    </p>
-
-    <p>L'ensemble des données se trouvent dans le graphe par défaut (pas de graphe nommé), et totalisent un peu plus d'un milliard de triplets.</p>
 
     <h2 id="notesdeversion">Notes de version</h2>
 
-    <h3 id="v00216janvier2018">v0.0.2 (16 janvier 2018)</h3>
+    <h3 id="v03012fvrier2019">v0.3.0 (12 février 2019)</h3>
+
+    <ul>
+      <li>
+        ajout des données essentielles de la commande publique issues de
+        <a
+          href="https://github.com/ColinMaudry/decp-json/"
+        >decp-json</a>
+      </li>
+
+      <li>mise à disposition d'une API (par exemple https://sireneld.io/api/decp/marches?limit=2&amp;text=cholet)</li>
+
+      <li>déplacement des contrôles de pagination au-dessus du tableau</li>
+
+      <li>correction du bug de formatage des dates</li>
+    </ul>
+
+    <h3 id="v02016janvier2019">v0.2.0 (16 janvier 2019)</h3>
 
     <ul>
       <li>ajout de données au dashboard</li>
@@ -72,10 +96,11 @@
       <li>boutons de navigation activés</li>
     </ul>
 
-    <h3 id="v00115janvier2019">v0.0.1 (15 janvier 2019)</h3>
+    <h3 id="v01015janvier2019">v0.1.0 (15 janvier 2019)</h3>
 
     <ul>
-      <li>initialisation de
+      <li>
+        initialisation de
         <a href="https://vuejs.org/">Vue 2</a>, personnalisation du template
         <a
           href="http://bootstraplovers.com/templates/float-admin-v1.1/dark-version/index.html"
@@ -91,4 +116,10 @@ export default {};
 </script>
 
 <style scoped>
+h3 {
+  margin: 30px 0px 20px 0px;
+}
+h2 {
+  margin: 30px 0px 20px 0px;
+}
 </style>

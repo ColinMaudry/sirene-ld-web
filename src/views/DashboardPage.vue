@@ -38,13 +38,17 @@
                     <em class="icon-bag fa-3x"></em>
                   </div>
                   <div class="col-xs-8 pv-15 text-center">
-                    <h2 class="mv-0">28 001 656</h2>
-                    <div class="text-uppercase">établissements</div>
+                    <h2 class="mv-0">20 383 763</h2>
+                    <div class="text-uppercase">établissements actifs</div>
                   </div>
                 </div>
               </div>
               <!--end widget-->
             </div>
+
+            <!-- <div class="col-lg-12 col-md-12 col-sm-12">
+              <categories-unites-legales/>
+            </div>-->
           </div>
         </div>
       </div>
@@ -78,7 +82,12 @@
 </template>
 
 <script>
-export default {};
+import CategoriesUnitesLegales from "@/components/charts/CategoriesUnitesLegales.vue";
+export default {
+  components: {
+    CategoriesUnitesLegales
+  }
+};
 </script>
 
 <style scoped>

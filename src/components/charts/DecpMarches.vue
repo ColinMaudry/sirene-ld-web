@@ -51,8 +51,9 @@ export default {
         { name: "objet", dataClass: "objet" },
         {
           name: "dateNotification",
-          title: "Date de notification",
-          sortField: "dateNotification"
+          title: "Notification",
+          sortField: "dateNotification",
+          callback: "formatDate"
         },
         { name: "montant", sortField: "montant" }
       ],
@@ -100,6 +101,7 @@ export default {
     }
   },
   watch: {
+    // eslint-disable-next-line
     moreParams(newVal, oldVal) {
       this.$nextTick(() => {
         this.$refs.decpMarches.refresh();

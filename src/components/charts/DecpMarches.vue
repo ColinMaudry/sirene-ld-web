@@ -4,6 +4,7 @@
     <div class="panel-body">
       <div class="btn-toolbar justify-content-between">
         <vuetable-filter-bar></vuetable-filter-bar>
+        <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
         <vuetable-pagination-info
           info-template="Résultats {from} à {to} sur {total}"
           ref="decpPaginationInfo"
@@ -19,7 +20,6 @@
         ref="decpMarches"
         @vuetable:pagination-data="onPaginationData"
       ></vuetable>
-      <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
     </div>
   </div>
 </template>

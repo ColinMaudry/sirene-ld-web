@@ -33,8 +33,23 @@ export default {
         },
         {
           name: "code",
+          title: "",
+          callback: "getBugUrl"
+        },
+        {
+          name: "code",
+          title: "",
+          callback: "getDownloadUrl"
+        },
+        {
+          name: "code",
           title: "Nombre de marchés",
           callback: "getNumMarchesPerSource"
+        },
+        {
+          name: "lastDownload",
+          title: "Mise à jour des données",
+          callback: "formatDate"
         }
       ],
       sourcesApi: this.$store.apiServer + "/api/decp/sources"
@@ -58,10 +73,38 @@ export default {
       });
       console.log;
       return filtered.length;
+    },
+    formatDate(date) {
+      var options = { year: "numeric", month: "short", day: "numeric" };
+      var jsDate = new Date(date);
+      return jsDate.toLocaleDateString("fr-FR", options);
+    },
+    getBugUrl(code) {
+      var url =
+        "https://github.com/ColinMaudry/decp-json/issues?q=is%3Aopen+is%3Aissue+label%3A" +
+        code;
+      return (
+        '<a href="' +
+        url +
+        '" target="_blank" title="Bugs et tâches">Bugs et tâches</a>'
+      );
+    },
+    getDownloadUrl(code) {
+      var url = "/data/decp/" + code + ".json";
+      var html =
+        '<a href="' +
+        url +
+        '" target="_blank" title="Télécharger les données de cette source" class="download"><i class="icon-cloud-download download"></i></a>';
+      return html;
     }
   }
 };
 </script>
 
-<style scoped>
+<style>
+.download {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin: 0 3px;
+}
 </style>

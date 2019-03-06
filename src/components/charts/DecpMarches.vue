@@ -104,8 +104,7 @@ export default {
       });
       return filtered.length;
     },
-    onCellClicked(data, field, event) {
-      console.log("cellClicked: ", field.name);
+    onCellClicked(data, field) {
       this.$refs.decpMarches.toggleDetailRow(data.id);
     }
   },

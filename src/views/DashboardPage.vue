@@ -82,11 +82,8 @@
 </template>
 
 <script>
-import CategoriesUnitesLegales from "@/components/charts/CategoriesUnitesLegales.vue";
 export default {
-  components: {
-    CategoriesUnitesLegales
-  }
+  components: {}
 };
 </script>
 

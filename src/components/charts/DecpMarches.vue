@@ -148,4 +148,7 @@ td.objet {
   transform: translateX(20px);
   color: #889;
 }
+tbody.vuetable-body > tr.vuetable-detail-row > td {
+  border-top: none;
+}
 </style>

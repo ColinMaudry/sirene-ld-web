@@ -56,7 +56,7 @@ export default {
         { name: "objet", dataClass: "objet" },
         {
           name: "dateNotification",
-          title: "Notification",
+          title: "Date notification",
           sortField: "dateNotification",
           callback: "formatDate"
         },

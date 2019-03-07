@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div class="btn-group mr-4" role="group">
     <ul class="pagination">
       <li :class="{'disabled': isOnFirstPage}">

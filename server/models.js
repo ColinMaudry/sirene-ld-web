@@ -5,7 +5,8 @@ exports.sourceSchema = new mongoose.Schema(
     id: Number,
     code: String,
     description: String,
-    url: String
+    url: String,
+    lastDownload: Date
   },
   { collection: "sources" }
 );

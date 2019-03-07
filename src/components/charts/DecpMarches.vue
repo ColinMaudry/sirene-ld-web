@@ -19,17 +19,22 @@
         :append-params="moreParams"
         ref="decpMarches"
         @vuetable:pagination-data="onPaginationData"
+        detail-row-component="decp-marches-details"
+        @vuetable:cell-clicked="onCellClicked"
       ></vuetable>
     </div>
   </div>
 </template>
-
 
 <script>
 import Vuetable from "vuetable-2";
 import axios from "axios";
 import VuetableFilterBar from "../vuetable/VuetableFilterBar";
 import VuetablePaginationInfo from "../vuetable/VuetablePaginationInfo";
+import DecpMarchesDetails from "@/components/charts/DecpMarchesDetails.vue";
+import Vue from "vue";
+Vue.component("decp-marches-details", DecpMarchesDetails);
+
 export default {
   components: {
     Vuetable,
@@ -51,7 +56,7 @@ export default {
         { name: "objet", dataClass: "objet" },
         {
           name: "dateNotification",
-          title: "Notification",
+          title: "Date notification",
           sortField: "dateNotification",
           callback: "formatDate"
         },
@@ -98,6 +103,9 @@ export default {
         return marche.source === value;
       });
       return filtered.length;
+    },
+    onCellClicked(data) {
+      this.$refs.decpMarches.toggleDetailRow(data.id);
     }
   },
   watch: {
@@ -129,5 +137,18 @@ td.objet {
 }
 .vuetable-pagination-info {
   float: right;
+}
+
+.vuetable tr:hover,
+.vuetable-detail-row {
+  background-color: rgb(22, 32, 47);
+}
+
+.vuetable-detail-row > * {
+  transform: translateX(20px);
+  color: #889;
+}
+tbody.vuetable-body > tr.vuetable-detail-row > td {
+  border-top: none;
 }
 </style>

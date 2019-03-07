@@ -29,6 +29,10 @@ export default {
   background-color: #3978bf !important;
 }
 
+.btn {
+  text-transform: none;
+}
+
 body {
   font-size: 16px;
 }

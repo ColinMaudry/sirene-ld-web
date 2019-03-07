@@ -9,7 +9,10 @@
             <h1>
               <!-- <img src="images/logo-default.png" alt> -->
               sireneLD.io
-              <span style="font-size:0.5em">{{ appVersion }}</span>
+              <a
+                style="font-size:0.5em;color:orange"
+                href="/presentation#notesdeversion"
+              >{{ appVersion }}</a>
             </h1>
           </a>
           <div class="left-nav-toggle visible-xs visible-sm">

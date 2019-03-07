@@ -20,8 +20,9 @@ Les données converties en RDF ou JSON peuvent être téléchargées au format n
 
 ## Notes de version
 
-### v0.4.0 (28 février 2019)
+### v0.4.0 (7 mars 2019)
 
+- Possibilité d'étendre une ligne de marché public en cliquant dessus
 - ajout de nouveaux champs pour les sources :
   - date de la dernière mise à jour des données
   - lien vers les issues Github

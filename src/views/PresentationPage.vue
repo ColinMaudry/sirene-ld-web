@@ -15,70 +15,70 @@
     <p>Les jeux de données suivants sont amenés à être intégrés au graphe sireneLD :</p>
 
     <ul>
-      <li>
-        [x]
+      <li>[x]
         <a
           href="https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret"
         >Répertoire SIRENE</a>
       </li>
 
-      <li>
-        [x]
+      <li>[x]
         <a
           href="https://www.data.gouv.fr/fr/datasets/donnees-essentielles-de-la-commande-publique-transmises-via-le-pes-marche/"
         >Données essentielles des attributions de marchés publics et de concessions (DECP)</a> (en JSON pour l'instant, issues de
-        <a
-          href="https://github.com/ColinMaudry/decp-json/"
-        >decp-json</a>)
+        <a href="https://github.com/ColinMaudry/decp-json/">decp-json</a>)
       </li>
 
-      <li>
-        [ ]
+      <li>[ ]
         <a
           href="https://www.data.gouv.fr/fr/datasets/repertoire-national-des-associations/"
         >Répertoire national des associations (RNA)</a>
       </li>
     </ul>
 
-    <p>
-      Les scripts de conversion de ces données sont visibles dans le dépôt Github
-      <a
-        href="https://github.com/ColinMaudry/sirene-ld"
-      >ColinMaudry/sirene-ld</a> et
+    <p>Les scripts de conversion de ces données sont visibles dans le dépôt Github
+      <a href="https://github.com/ColinMaudry/sirene-ld">ColinMaudry/sirene-ld</a> et
       <a href="https://github.com/ColinMaudry/decp-json/">decp-json</a>.
     </p>
 
-    <p>
-      Le croisement de ces données permettra de faire surgir de nouvelles informations (
+    <p>Le croisement de ces données permettra de faire surgir de nouvelles informations (
       <em>insights</em>).
     </p>
 
-    <p>
-      Vous pouvez suivre l'avancement de ce projet sur Twitter via le hashtag
-      <a
-        href="https://twitter.com/hashtag/sireneLD"
-      >#sireneLD</a>.
+    <p>Vous pouvez suivre l'avancement de ce projet sur Twitter via le hashtag
+      <a href="https://twitter.com/hashtag/sireneLD">#sireneLD</a>.
     </p>
 
     <h2 id="tlchargementdesdonnes">Téléchargement des données</h2>
 
-    <p>
-      Les données converties en RDF ou JSON peuvent être téléchargées au format n-triples gzippé dans
-      <a
-        href="https://sireneld.io/data"
-      >https://sireneld.io/data</a>.
+    <p>Les données converties en RDF ou JSON peuvent être téléchargées au format n-triples gzippé dans
+      <a href="https://sireneld.io/data">https://sireneld.io/data</a>.
     </p>
 
     <h2 id="notesdeversion">Notes de version</h2>
 
+    <h3 id="v0407mars2019">v0.4.0 (7 mars 2019)</h3>
+
+    <ul>
+      <li>Possibilité d'étendre une ligne de marché public en cliquant dessus</li>
+
+      <li>ajout de nouveaux champs pour les sources :
+        <ul>
+          <li>date de la dernière mise à jour des données</li>
+
+          <li>lien vers les issues Github</li>
+
+          <li>lien de téléchargement des données de la source</li>
+        </ul>
+      </li>
+
+      <li>lien vers le dépôt Github dans le pied de page et mention de la licence du code source (Unlicense)</li>
+    </ul>
+
     <h3 id="v03012fvrier2019">v0.3.0 (12 février 2019)</h3>
 
     <ul>
-      <li>
-        ajout des données essentielles de la commande publique issues de
-        <a
-          href="https://github.com/ColinMaudry/decp-json/"
-        >decp-json</a>
+      <li>ajout des données essentielles de la commande publique issues de
+        <a href="https://github.com/ColinMaudry/decp-json/">decp-json</a>
       </li>
 
       <li>mise à disposition d'une API (par exemple https://sireneld.io/api/decp/marches?limit=2&amp;text=cholet)</li>
@@ -99,8 +99,7 @@
     <h3 id="v01015janvier2019">v0.1.0 (15 janvier 2019)</h3>
 
     <ul>
-      <li>
-        initialisation de
+      <li>initialisation de
         <a href="https://vuejs.org/">Vue 2</a>, personnalisation du template
         <a
           href="http://bootstraplovers.com/templates/float-admin-v1.1/dark-version/index.html"

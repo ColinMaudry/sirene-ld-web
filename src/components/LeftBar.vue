@@ -7,6 +7,11 @@
           <li class="nav-heading"></li>
           <li>
             <router-link to="/">
+              <i class="icon-home"></i> Recherche
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/dashboard">
               <i class="icon-home"></i> Dashboard
             </router-link>
           </li>

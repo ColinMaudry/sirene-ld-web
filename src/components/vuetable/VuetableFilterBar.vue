@@ -1,5 +1,9 @@
 <template>
-  <div class="btn-group mr-4 fulltext" role="group" aria-label="Recherche de texte">
+  <div
+    class="btn-group mr-4 fulltext"
+    role="group"
+    aria-label="Recherche de texte"
+  >
     <div class="input-group">
       <input
         type="text"
@@ -9,14 +13,16 @@
         class="form-control"
         aria-label="Input group example"
         aria-describedby="btnGroupAddon"
-      >
+      />
     </div>
     <button type="button" class="btn btn-primary" @click="doFilter">Go</button>
-    <button type="button" class="btn btn-primary" @click="resetFilter">Remise à zéro</button>
+    <button type="button" class="btn btn-primary" @click="resetFilter">
+      Remise à zéro
+    </button>
   </div>
 </template>
 
-  <script>
+<script>
 import { mapActions } from "vuex";
 
 export default {

@@ -2,18 +2,22 @@
   <div class="panel panel-default">
     <div class="panel-heading">Sources de données essentielles utilisées</div>
     <div class="panel-body">
-      <vuetable :api-url="apiServer + '/api/decp/sources'" :fields="fields" ref="decpSources"></vuetable>
+      <vuetable
+        :api-url="apiServer + '/api/decp/sources'"
+        :fields="fields"
+        ref="decpSources"
+      ></vuetable>
     </div>
     <div class="panel-footer">
       Voir aussi les sources identifiées mais pas encore intégrées
       <a
         href="https://github.com/ColinMaudry/decp-json#sources-de-donn%C3%A9es"
         target="_blank"
-      >sur Github</a>
+        >sur Github</a
+      >
     </div>
   </div>
 </template>
-
 
 <script>
 import Vuetable from "vuetable-2";

@@ -4,7 +4,10 @@
     <div class="panel-body">
       <div class="btn-toolbar justify-content-between">
         <vuetable-filter-bar></vuetable-filter-bar>
-        <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
+        <vuetable-pagination
+          ref="pagination"
+          @vuetable-pagination:change-page="onChangePage"
+        ></vuetable-pagination>
         <vuetable-pagination-info
           info-template="Résultats {from} à {to} sur {total}"
           ref="decpPaginationInfo"
@@ -123,6 +126,7 @@ export default {
       .then(response => {
         this.marches = response.data;
       })
+
       .catch(error => {
         console.log(error.response);
       });

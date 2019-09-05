@@ -16,13 +16,10 @@ var searchParams = require("./server/middlewares/search-params");
 var config = require("./server/config");
 
 // Connect to database
-mongoose.connect(
-  config.db.uri,
-  {
-    useNewUrlParser: true,
-    auth: { user: config.db.username, password: config.db.password }
-  }
-);
+mongoose.connect(config.db.uri, {
+  useNewUrlParser: true,
+  auth: { user: config.db.username, password: config.db.password }
+});
 mongoose.Promise = global.Promise;
 
 //Get the default connection

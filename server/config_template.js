@@ -4,5 +4,6 @@ module.exports = {
     username: "user",
     password: "1234"
   },
+  sparql: "localhost:3030/sirene/sparql",
   port: 4444
 };

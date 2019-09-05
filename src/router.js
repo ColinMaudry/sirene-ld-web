@@ -3,6 +3,7 @@ import Router from "vue-router";
 import PresentationPage from "@/views/PresentationPage.vue";
 import DashboardPage from "@/views/DashboardPage.vue";
 import MarchesPublics from "./views/MarchesPublics.vue";
+import Siren from "./views/Siren.vue";
 
 Vue.use(Router);
 
@@ -24,6 +25,11 @@ export default new Router({
       path: "/commande-publique",
       name: "decp",
       component: MarchesPublics
+    },
+    {
+      path: "/siren/:siren",
+      name: "siren",
+      component: Siren
     }
   ]
 });

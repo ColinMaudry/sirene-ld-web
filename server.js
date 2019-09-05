@@ -87,6 +87,21 @@ app.get("/api/decp/marches", async (req, res, next) => {
     next(err);
   }
 });
+
+app.get("/siren/:siren(\\d+)", async (req, res, next) => {
+  const siren = req.params.siren;
+
+  if (/html/.test(req.headers.accept)) {
+    next();
+  } else {
+    res.json({ siren: siren });
+  }
+});
+
+app.post("/api/sparql", async (req, res) => {
+  res.redirect(301, config.sparql);
+});
+
 app.use(injectPaginate);
 app.use(
   history({

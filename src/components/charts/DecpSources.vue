@@ -51,28 +51,37 @@ export default {
           title: "Mise à jour des données",
           callback: "formatDate"
         }
-      ],
-      sourcesApi: this.$store.apiServer + "/api/decp/sources"
+      ]
     };
   },
   computed: {
     apiServer() {
       return process.env.VUE_APP_API_SERVER;
     },
-    marches() {
-      return this.$store.state.data.marches;
+    stats() {
+      return this.$store.state.stats;
+    },
+    lastStat() {
+      return this.$store.getters.getLastStat;
+    },
+    sourcesApi() {
+        return this.apiServer + "/api/decp/sources"
     }
+
   },
   methods: {
     toHref(url) {
       return '<a target="_blank" href="' + url + "\">Plus d'infos</a>";
     },
+
     getNumMarchesPerSource(value) {
-      var filtered = this.marches.filter(function(marche) {
-        return marche.source === value;
-      });
-      console.log;
-      return filtered.length;
+      if (typeof(this.lastStat.filter) === "function") {
+        var stat = this.lastStat.filter(source => source.source === value);
+        return stat[0].marches;
+      } else {
+
+        return 0
+      }
     },
     formatDate(date) {
       var options = { year: "numeric", month: "short", day: "numeric" };

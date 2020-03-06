@@ -19,10 +19,10 @@ export default new Vuex.Store({
       return state.search.filterText;
     },
     getStats: state => {
-      return state.data.stats
+      return state.data.stats;
     },
     getLastStat: state => {
-        return state.data.lastStat
+      return state.data.lastStat;
     }
   },
   mutations: {
@@ -45,9 +45,8 @@ export default new Vuex.Store({
     },
     storeStats(store, stats) {
       var lastStatIndex = stats.length - 1;
-      console.log("lastStatIndex " + lastStatIndex);
       var lastStat = stats[lastStatIndex].sources;
-      store.commit("LASTSTAT",lastStat);
+      store.commit("LASTSTAT", lastStat);
     },
     setFilterText(store, filterText) {
       store.commit("FILTER_TEXT", filterText);

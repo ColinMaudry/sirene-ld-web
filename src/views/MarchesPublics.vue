@@ -38,7 +38,7 @@ export default {
     DecpMarches
   },
   methods: {
-    ...mapActions(["storeMarches"])
+    ...mapActions(["storeStats"])
   },
   computed: {
     apiServer() {
@@ -47,9 +47,9 @@ export default {
   },
   created() {
     axios
-      .get(this.apiServer + "/api/decp/marches")
+      .get(this.apiServer + "/api/decp/stats")
       .then(response => {
-        this.storeMarches(response.data);
+        this.storeStats(response.data);
       })
       .catch(error => {
         console.log(error.response);

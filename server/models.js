@@ -10,7 +10,24 @@ exports.sourceSchema = new mongoose.Schema(
   },
   { collection: "sources" }
 );
+
 exports.Source = mongoose.model("Source", exports.sourceSchema);
+
+const statSource = new mongoose.Schema({
+  source: String,
+  marches: Number,
+  nouveauxMarches: Number
+});
+
+exports.statSchema = new mongoose.Schema(
+  {
+    sources: [statSource],
+    date: String,
+  },
+  { collection: "stats" }
+);
+
+exports.Stat = mongoose.model("Stat", exports.statSchema);
 
 const acheteur = new mongoose.Schema({
   id: String,

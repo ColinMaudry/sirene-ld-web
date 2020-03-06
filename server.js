@@ -87,6 +87,31 @@ app.get("/api/decp/marches", async (req, res, next) => {
     next(err);
   }
 });
+app.get("/api/decp/stats", async (req, res, next) => {
+  if (!req.custom) {
+    req.custom = {};
+  }
+
+  try {
+    const [results, totalCount] = await Promise.all([
+      models.Stat.find(res.locals.searchParams)
+        .sort(req.query.sort)
+        .limit(req.query.per_page || req.query.limit)
+        .skip(req.skip)
+        .lean()
+        .exec(),
+      models.Stat.countDocuments(res.locals.searchParams)
+    ]);
+
+    res.locals.results = results;
+    res.locals.totalCount = totalCount;
+
+    next();
+  } catch (err) {
+    next(err);
+  }
+});
+
 app.use(injectPaginate);
 app.use(
   history({

@@ -18,4 +18,18 @@ describe("## Basic tests", function() {
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
+  it("DECP sources route (/siren/123) with HTML accept returns HTML.", function(done) {
+    request(app)
+      .get("/siren/123")
+      .set("accept", "text/html")
+      .expect("Content-Type", /html/)
+      .expect(200, done);
+  });
+  it("DECP sources route (/siren/123) with JSON accept returns JSON.", function(done) {
+    request(app)
+      .get("/siren/123")
+      .set("accept", "application/json")
+      .expect("Content-Type", /json/)
+      .expect(200, done);
+  });
 });

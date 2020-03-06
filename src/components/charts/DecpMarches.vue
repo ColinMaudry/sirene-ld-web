@@ -28,7 +28,6 @@
 
 <script>
 import Vuetable from "vuetable-2";
-import axios from "axios";
 import VuetableFilterBar from "../vuetable/VuetableFilterBar";
 import VuetablePaginationInfo from "../vuetable/VuetablePaginationInfo";
 import DecpMarchesDetails from "@/components/charts/DecpMarchesDetails.vue";
@@ -98,12 +97,6 @@ export default {
         })
         .join(",");
     },
-    getNumMarchesPerSource(value) {
-      var filtered = this.marches.filter(function(marche) {
-        return marche.source === value;
-      });
-      return filtered.length;
-    },
     onCellClicked(data) {
       this.$refs.decpMarches.toggleDetailRow(data.id);
     }
@@ -116,17 +109,7 @@ export default {
       });
     }
   },
-  mounted() {},
-  created() {
-    axios
-      .get(this.apiServer + "/api/decp/marches")
-      .then(response => {
-        this.marches = response.data;
-      })
-      .catch(error => {
-        console.log(error.response);
-      });
-  }
+  mounted() {}
 };
 </script>
 

@@ -1,4 +1,4 @@
-# sireneLD Web 0.4.0
+# sireneLD Web 0.4.1
 
 Le project sireneLD vise à construire un graphe requêtable autour des données ouvertes faisant référence à des unité légales ou des établissements via leur numéro SIREN/SIRET.
 
@@ -19,6 +19,11 @@ Vous pouvez suivre l'avancement de ce projet sur Twitter via le hashtag [#sirene
 Les données converties en RDF ou JSON peuvent être téléchargées au format n-triples gzippé dans [https://sireneld.io/data](https://sireneld.io/data).
 
 ## Notes de version
+
+### v0.4.1 (6 mars 2020)
+
+- Récupération des statistiques et non de tous les (à présent nombreux) marchés
+- mise à jour des dépendances vulnérables (`npm audit fix`)
 
 ### v0.4.0 (7 mars 2019)
 

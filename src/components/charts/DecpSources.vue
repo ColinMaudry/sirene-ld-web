@@ -65,9 +65,8 @@ export default {
       return this.$store.getters.getLastStat;
     },
     sourcesApi() {
-        return this.apiServer + "/api/decp/sources"
+      return this.apiServer + "/api/decp/sources";
     }
-
   },
   methods: {
     toHref(url) {
@@ -75,12 +74,11 @@ export default {
     },
 
     getNumMarchesPerSource(value) {
-      if (typeof(this.lastStat.filter) === "function") {
+      if (typeof this.lastStat.filter === "function") {
         var stat = this.lastStat.filter(source => source.source === value);
         return stat[0].marches;
       } else {
-
-        return 0
+        return 0;
       }
     },
     formatDate(date) {

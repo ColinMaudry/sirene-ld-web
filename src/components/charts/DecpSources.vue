@@ -45,11 +45,6 @@ export default {
           name: "code",
           title: "Nombre de marchés",
           callback: "getNumMarchesPerSource"
-        },
-        {
-          name: "lastDownload",
-          title: "Mise à jour des données",
-          callback: "formatDate"
         }
       ]
     };
